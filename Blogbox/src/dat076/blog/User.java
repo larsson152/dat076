@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.chl.hajo.blog.core;
+package dat076.blog;
 
 import java.util.ArrayList;
 
@@ -30,5 +30,19 @@ public class User {
     
     public  ArrayList<Blog> getBlogs(){
         return blogs;
+    }
+    
+    public void createBlog(String blogName){
+        blogs.add(new Blog(blogName));
+    }
+    
+    public Blog getBlogByName(String name)
+    {
+        for (Blog blog: blogs) {
+            if (blog.getBlogName().toLowerCase().equals(name.toLowerCase())) {
+                return blog;
+            }
+        }
+        return null;
     }
 }

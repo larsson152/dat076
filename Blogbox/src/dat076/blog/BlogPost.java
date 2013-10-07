@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.chl.hajo.blog.core;
+package dat076.blog;
 
 import java.util.*;
 
@@ -21,6 +21,7 @@ public class BlogPost {
     
    public BlogPost(String message){
        this.message = message;
+       
    }
     
    public String getMessage(){
@@ -28,6 +29,7 @@ public class BlogPost {
    }
    
    public java.util.Date getDate(){
+       System.out.println("AAAAAAAAAAAAA!"+date.getTime());
        return date;
    }
    

@@ -1,4 +1,4 @@
-package edu.chl.hajo.blog.core;
+package dat076.blog;
 
 import java.util.ArrayList;
 
@@ -10,11 +10,11 @@ import java.util.ArrayList;
  *
  * @author Andreas
  */
-public class TheBlog {
+public class Blogbox {
 
     private ArrayList<User> users;
 
-    public TheBlog() {
+    public Blogbox() {
         users = new ArrayList<>();
 
     }
@@ -26,11 +26,22 @@ public class TheBlog {
     public boolean addNewUser(String name) {
 
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getName().equals(name)) {
+            if (users.get(i).getName().toLowerCase().equals(name.toLowerCase())) {
                 return false;
             }
         }
         users.add(new User(name));
         return true;
     }
+    
+    public User getUserByName(String name)
+    {
+         for (User user: users) {
+            if (user.getName().toLowerCase().equals(name.toLowerCase())) {
+                return user;
+            }
+        }
+        return null;
+    }
+    
 }
