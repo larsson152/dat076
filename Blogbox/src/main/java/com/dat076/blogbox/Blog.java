@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dat076.blog;
+package com.dat076.blogbox;
 
+import com.dat076.blogbox.BlogPost;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +18,7 @@ public class Blog {
     private String blogName;
     
     public Blog(String blogName) {
-        this.blogPosts = new ArrayList<>();
+        this.blogPosts = new ArrayList();
         this.blogName = blogName;
     }
 
@@ -43,7 +44,7 @@ public class Blog {
     
      public ArrayList<BlogPost> getPostByDate(java.util.Date date){
         
-        ArrayList<BlogPost> datePosts = new ArrayList<>();
+        ArrayList<BlogPost> datePosts = new ArrayList();
         
         for(int i=0;i<blogPosts.size();i++){
             if(blogPosts.get(i).getDate().compareTo(date)==0){

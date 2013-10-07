@@ -1,5 +1,6 @@
-/Blogbox/dist/
+/Blogbox/target/
 /Blogbox/build/
+/Blogbox/dist/
 
 
 *.class

@@ -1,4 +1,4 @@
-package dat076.blog;
+package com.dat076.blogbox;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class Blogbox {
     private ArrayList<User> users;
 
     public Blogbox() {
-        users = new ArrayList<>();
+        users = new ArrayList();
 
     }
 

@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dat076.blogbox;
+package com.dat076.blogbox;
 
-import dat076.blog.Blog;
-import dat076.blog.Blogbox;
-import dat076.blog.User;
+import com.dat076.blogbox.Blog;
+import com.dat076.blogbox.Blogbox;
+import com.dat076.blogbox.User;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,11 +18,11 @@ import static org.junit.Assert.*;
  *
  * @author Andreas
  */
-public class BlogTest {
+public class TestBlog {
 
     private Blogbox blogbox;
 
-    public BlogTest() {
+    public TestBlog() {
     }
 
     @Before

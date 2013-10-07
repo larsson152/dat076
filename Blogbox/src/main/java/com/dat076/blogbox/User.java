@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dat076.blog;
+package com.dat076.blogbox;
 
+import com.dat076.blogbox.Blog;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +22,7 @@ public class User {
     
     public User(String name){
         this.name=name;
-        blogs = new ArrayList<>();
+        blogs = new ArrayList();
     }
     
     public String getName(){
