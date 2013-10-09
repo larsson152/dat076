@@ -5,7 +5,6 @@
 package com.dat076.blogbox;
 
 import com.dat076.blogbox.Blog;
-import com.dat076.blogbox.Blogbox;
 import com.dat076.blogbox.User;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -18,7 +17,7 @@ import static org.junit.Assert.*;
  *
  * @author Andreas
  */
-public class TestBlog {
+/*public class TestBlog {
 
     private Blogbox blogbox;
 
@@ -54,3 +53,4 @@ public class TestBlog {
     }
     
 }
+*/

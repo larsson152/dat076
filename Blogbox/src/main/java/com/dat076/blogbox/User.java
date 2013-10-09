@@ -6,11 +6,16 @@ package com.dat076.blogbox;
 
 import com.dat076.blogbox.Blog;
 import java.util.ArrayList;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ManagedBean;
 
 /**
  *
  * @author Andreas
  */
+
+@ManagedBean(name = "user", eager = true)
+@RequestScoped
 public class User {
     
     private String name;
@@ -45,5 +50,9 @@ public class User {
             }
         }
         return null;
+    }
+    
+    public void setName(String name){
+        this.name = name;
     }
 }
