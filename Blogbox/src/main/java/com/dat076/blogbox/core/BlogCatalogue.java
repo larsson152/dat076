@@ -1,6 +1,6 @@
 package com.dat076.blogbox.core;
 
-import com.dat076.blogbox.BlogPost;
+import com.dat076.blogbox.core.BlogPost;
 import com.dat076.blogbox.utils.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;

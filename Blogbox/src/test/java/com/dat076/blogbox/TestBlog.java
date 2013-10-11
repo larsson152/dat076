@@ -4,8 +4,7 @@
  */
 package com.dat076.blogbox;
 
-import com.dat076.blogbox.Blog;
-import com.dat076.blogbox.User;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
