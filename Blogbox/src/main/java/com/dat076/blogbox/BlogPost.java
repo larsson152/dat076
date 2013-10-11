@@ -14,6 +14,7 @@ public class BlogPost {
     
    private String message;
    private java.util.Date date;
+   private String title;
    
    public BlogPost(){
        
@@ -32,5 +33,18 @@ public class BlogPost {
        System.out.println("AAAAAAAAAAAAA!"+date.getTime());
        return date;
    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    
+   
+   
+   
    
 }
