@@ -20,6 +20,12 @@ public class BlogPost extends AbstractEntity {
         this.title = title;
         this.message = message;
     }
+    
+        public BlogPost(Long id, String title, String message) {
+        super(id);
+        this.title = title;
+        this.message = message;
+        }
 
     public String getTitle() {
         return title;

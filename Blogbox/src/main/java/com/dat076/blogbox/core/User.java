@@ -14,6 +14,7 @@ import javax.persistence.Table;
 @Table //(name="User")
 public class User extends AbstractEntity  {
     
+    @Column(nullable=false)
     private String name;
     @Column(nullable=false)
     private String email;
@@ -26,8 +27,7 @@ public class User extends AbstractEntity  {
         this.email = email;
     }
     
-    public User(Long id, String fname,
-            String lname, String email) {
+    public User(Long id, String name, String email) {
         super(id);
         this.name = name;
         this.email = email;

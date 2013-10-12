@@ -3,11 +3,14 @@ package com.dat076.blogbox.core;
 import com.dat076.blogbox.utils.AbstractDAO;
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Named;
 
 /**
  *
  * @author Patrik Larsson
  */
+
+@Named
 public final class UserRegistry extends AbstractDAO<User, Long> implements IUserRegistry {
 
    
