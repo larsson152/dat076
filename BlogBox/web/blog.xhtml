@@ -1,16 +1,52 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <h:outputText value="#{blogBoxUserView.blog.name}"/>
-            <h:outputText value=" by user: "/>
-            <h:outputText value="#{blogBoxUserView.blog.user.name}"/>
-        </h:form>
-    </h:body>
-</html>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
+        <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    </head>
+    <body>
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.xhtml" accesskey="1" title="">Homepage</a></li>
+                        <li class="current_page_item"><a href="blog.xhtml" accesskey="2" title="">Blogs</a></li>
+                    </ul>
+                </div>
+                <div id="logo">
+                    <h1><a href="index.xhtml">Blogbox</a></h1>
+                </div>
+            </div>
+        </div>
+        <div id="wrapper2">
+            <div id="newsletter" class="container">
+                <div class="title">
+                    <h2><h:outputText value="#{BlogBoxView.user.name}"/>'s Blogs</h2>
+                </div>
+                <div class="content">
+                    <h:form>
+                        <ui:repeat value="#{BlogBoxUserView.allUsersBlogs}" var="blog">  
+                            <br><b>#{blog.name}</b></br>   
+                        </ui:repeat> 
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <div id="copyright">
+            <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+        </div>
+    </body>
+</html>
