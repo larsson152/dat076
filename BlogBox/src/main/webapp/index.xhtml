@@ -38,15 +38,15 @@
                     <h:form>
                         <div class="row half">
                             <div class="6u">
-                                <h:outputLabel value="Name:"/><h:inputText class="text" value="#{BlogBoxView.user.name}"/>
+                                <h:outputLabel value="Name:"/><h:inputText class="text" value="#{bbView.user.name}"/>
                             </div>
                             <div class="6u">
-                                <h:outputLabel value="Email:"/><h:inputText class="text" value="#{BlogBoxView.user.email}"/>
+                                <h:outputLabel value="Email:"/><h:inputText class="text" value="#{bbView.user.email}"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="12u">
-                                <h:commandButton class="button submit" action="#{BlogBoxView.createUser()}" value="Sign up"/>
+                                <h:commandButton class="button submit" action="#{bbView.createUser()}" value="Sign up"/>
                             </div>
                         </div>
                     </h:form>

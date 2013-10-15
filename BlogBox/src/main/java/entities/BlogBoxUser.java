@@ -22,6 +22,7 @@ public class BlogBoxUser implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private String email;
     /*@OneToMany
     @JoinColumn
     private List<Blog> blog;*/
@@ -40,6 +41,14 @@ public class BlogBoxUser implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /*public List<Blog> getBlog() {

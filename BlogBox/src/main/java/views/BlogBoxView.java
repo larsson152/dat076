@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author larsson152
  */
-@ManagedBean
+@ManagedBean (name="bbView")
 @SessionScoped
 public class BlogBoxView {
 
