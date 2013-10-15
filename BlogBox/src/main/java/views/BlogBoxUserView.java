@@ -58,7 +58,7 @@ public class BlogBoxUserView {
 
 
         System.out.println("Tidigare användare hittades ej!");
-        return "userpage";
+        return "blog";
 
     }
 }

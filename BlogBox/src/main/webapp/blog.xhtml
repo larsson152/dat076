@@ -33,11 +33,11 @@
         <div id="wrapper2">
             <div id="newsletter" class="container">
                 <div class="title">
-                    <h2><h:outputText value="#{BlogBoxView.user.name}"/>'s Blogs</h2>
+                    <h2><h:outputText value="#{blogBoxView.user.name}"/>'s Blogs</h2>
                 </div>
                 <div class="content">
                     <h:form>
-                        <ui:repeat value="#{BlogBoxUserView.allUsersBlogs}" var="blog">  
+                        <ui:repeat value="#{blogBoxUserView.allUsersBlogs}" var="blog">  
                             <br><b>#{blog.name}</b></br>   
                         </ui:repeat> 
                     </h:form>

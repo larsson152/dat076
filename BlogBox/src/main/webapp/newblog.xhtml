@@ -32,18 +32,18 @@
         <div id="wrapper2">
             <div id="newsletter" class="container">
                 <div class="title">
-                    <h2>Welcome <h:outputText value="#{BlogBoxView.user.name}"/></h2>
+                    <h2>Welcome <h:outputText value="#{blogBoxView.user.name}"/></h2>
                     <span class="byline">Please choose a name for your blog below</span> </div>
                 <div class="content">
                     <h:form>
                         <div class="row half">
                             <div class="6u">
-                                <h:outputLabel value="Blog name:"/><h:inputText class="text" value="#{BlogBoxUserView.blog.name}"/>
+                                <h:outputLabel value="Blog name:"/><h:inputText class="text" value="#{blogBoxUserView.blog.name}"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="12u">
-                                <h:commandButton class="button submit" action="#{BlogBoxUserView.createBlog()}" value="Create blog"/>
+                                <h:commandButton class="button submit" action="#{blogBoxUserView.createBlog(blogBoxView.user.name)}" value="Create blog"/>
                             </div>
                         </div>
                     </h:form>

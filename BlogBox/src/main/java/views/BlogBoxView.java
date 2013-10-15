@@ -46,7 +46,7 @@ public class BlogBoxView {
         for (BlogBoxUser user : users) {
             if (user.getName().equals(name)) {
                 this.user = user;
-                return "userpage";
+                return "blog";
             }
         }
         return "index";
@@ -66,7 +66,7 @@ public class BlogBoxView {
         }
 
         blogBoxUserFacade.create(user);
-        return "userpage";
+        return "newblog";
     }
 
     public List<BlogBoxUser> getAllUsers() {
