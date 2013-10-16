@@ -6,21 +6,21 @@ package my.presentation;
 
 import boundary.BlogBoxUserFacade;
 import entities.BlogBoxUser;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.component.behavior.FacesBehavior;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Patrik Larsson
  */
-@ManagedBean(name = "BlogBoxView")
+@Named
 @SessionScoped
-public class BlogBoxView {
+public class BlogBoxView implements Serializable{
 
     @EJB
     private BlogBoxUserFacade blogBoxUserFacade;
@@ -35,6 +35,10 @@ public class BlogBoxView {
 
     public BlogBoxUser getUser() {
         return user;
+    }
+
+    public void setUser(BlogBoxUser user) {
+        this.user = user;
     }
 
     public boolean hasUser() {

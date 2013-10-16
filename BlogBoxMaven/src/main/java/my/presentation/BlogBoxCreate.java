@@ -7,21 +7,25 @@ package my.presentation;
 import boundary.BlogBoxUserFacade;
 import entities.BlogBoxUser;
 import javax.ejb.EJB;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 
 /**
  *
  * @author Patrik Larsson
  */
-@ManagedBean(name = "BlogBoxCreate")
+@Named
 @RequestScoped
 public class BlogBoxCreate {
 
     @EJB
     private BlogBoxUserFacade blogBoxUserFacade;
     private BlogBoxUser user;
+    
+    @Inject
+    private BlogBoxView blogBoxView;
 
     /**
      * Creates a new instance of MessageView
@@ -50,6 +54,7 @@ public class BlogBoxCreate {
             }
         }
         this.blogBoxUserFacade.create(user);
-        return "index";
+        blogBoxView.setUser(user);
+        return "user";
     }
 }

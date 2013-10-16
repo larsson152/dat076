@@ -4,23 +4,23 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:c="http://java.sun.com/jsp/jstl/core">
     <h:head>
-        <title>#{BlogBoxUserView.blog.name}</title>
+        <title>#{blogBoxUserView.blog.name}</title>
     </h:head>
     <h:body>
         <h:form>
             <h:outputLabel value="Your username is: " />
-            <h:outputText value="#{BlogBoxView.user.name}"/>
+            <h:outputText value="#{blogBoxView.user.name}"/>
             <br/>
             <h:outputLabel value="This is blog : " />
-            <h:outputText value="#{BlogBoxUserView.blog.name}"/>
+            <h:outputText value="#{blogBoxUserView.blog.name}"/>
             <br/>
             <h:outputLabel value="And you have " />
-            <h:outputText value="#{BlogBoxUserView.getNumberOfBlogsOnUser()}"/>
+            <h:outputText value="#{blogBoxUserView.getNumberOfBlogsOnUser()}"/>
             <h:outputText value=" blogs! This is one of them."/>
             <br/>
 
 
-            <c:forEach var="blogPost" items="#{BlogPostView.getBlogPostsOnBlog(BlogBoxUserView.blog)}">
+            <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
                 <h:outputText value ="Title : #{blogPost.title}"/>
                 <br/>
                 <h:outputText value ="Date :#{blogPost.postDate}"/>
@@ -33,12 +33,12 @@
             <h:outputLabel value="Create a new blogPost here:" />
             <br/>
             <h:outputLabel value="BlogPost Title:"/>
-            <h:inputText value="#{BlogPostView.blogPost.title}"/>
+            <h:inputText value="#{blogPostView.blogPost.title}"/>
             <br/>
             <h:outputLabel value="BlogPost message:"/>
-            <h:inputText value="#{BlogPostView.blogPost.message}"/>
+            <h:inputText value="#{blogPostView.blogPost.message}"/>
             <br/>
-            <h:commandButton action="#{BlogPostView.createBlogPost(BlogBoxUserView.blog)}" value="Create new blogPost!"/>
+            <h:commandButton action="#{blogPostView.createBlogPost(blogBoxUserView.blog)}" value="Create new blogPost!"/>
             <br/>
             <h:commandButton action="user" value="BlogList!"/>
             <h:commandButton action="index" value="index!"/>

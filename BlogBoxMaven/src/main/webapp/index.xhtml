@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <c:if test="#{!BlogBoxView.hasUser()}">
+            <c:if test="#{!blogBoxView.hasUser()}">
                 <div id="wrapper2">
                     <div id="newsletter" class="container">
                         <div class="title">
@@ -42,20 +42,20 @@
                             <h:form>
                                 <div class="row half">
                                     <div class="6u">
-                                        <h:outputLabel value="Name:"/><h:inputText class="text" value="#{BlogBoxCreate.user.name}"/>
+                                        <h:outputLabel value="Name:"/><h:inputText class="text" value="#{blogBoxCreate.user.name}"/>
                                         <br/>
                                     </div>
 
                                     <div class="6u">
-                                        <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{BlogBoxCreate.user.password}"/>
+                                        <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{blogBoxCreate.user.password}"/>
                                         <br/>
                                     </div>
 
                                 </div>
                                 <div class="row">
                                     <div class="12u">
-                                        <h:commandButton class ="button submit" action="#{BlogBoxCreate.createUser()}" value="Register new user"/>
-                                        <h:commandButton class ="button submit" action="#{BlogBoxView.loginUser(BlogBoxCreate.user)}" value="Login"/>
+                                        <h:commandButton class ="button submit" action="#{blogBoxCreate.createUser()}" value="Register new user"/>
+                                        <h:commandButton class ="button submit" action="#{blogBoxView.loginUser(BlogBoxCreate.user)}" value="Login"/>
                                     </div>
                                 </div>
                             </h:form>
@@ -64,13 +64,13 @@
                 </div>
             </c:if> 
 
-            <c:if test="#{BlogBoxView.hasUser()}">
+            <c:if test="#{blogBoxView.hasUser()}">
                 <div id="wrapper2">
                     <div id="newsletter" class="container">
                         <h:form>
                             <div class="title">
                                 <div class="6u">
-                                    <h2>Welcome, #{BlogBoxView.user.name}! </h2>
+                                    <h2>Welcome, #{blogBoxView.user.name}! </h2>
                                 </div>
                             </div>
                             <h:commandButton class ="button submit" action="user" value="Your blogs"/>

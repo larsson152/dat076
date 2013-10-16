@@ -6,10 +6,10 @@ package my.presentation;
 
 import boundary.BlogFacade;
 import entities.Blog;
+import java.io.Serializable;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
 
 
@@ -17,9 +17,9 @@ import javax.faces.bean.ManagedBean;
  *
  * @author Patrik Larsson
  */
-@ManagedBean(name="BlogView")
+@Named
 @SessionScoped
-public class BlogView {
+public class BlogView implements Serializable {
     
     @EJB
     private BlogFacade blogFacade;

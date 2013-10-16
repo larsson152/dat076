@@ -7,21 +7,22 @@ package my.presentation;
 import boundary.BlogPostFacade;
 import entities.Blog;
 import entities.BlogPost;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.*;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 
 /**
  *
  * @author Patrik Larsson
  */
-@ManagedBean(name = "BlogPostView")
+@Named
 @SessionScoped
-public class BlogPostView {
+public class BlogPostView implements Serializable{
     @EJB
     private BlogPostFacade blogPostFacade;
     private BlogPost blogPost;

@@ -7,21 +7,20 @@ package my.presentation;
 import boundary.BlogFacade;
 import entities.Blog;
 import entities.BlogBoxUser;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.*;
-import javax.inject.Inject;
+import javax.faces.bean.SessionScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author larsson152
  */
-@ManagedBean(name = "BlogBoxUserView")
+@Named
 @SessionScoped
-public class BlogBoxUserView {
+public class BlogBoxUserView implements Serializable {
     
     @EJB
     private BlogFacade blogFacade;
@@ -37,6 +36,7 @@ public class BlogBoxUserView {
     public Blog getBlog() {
         return blog;
     }
+    
     
     public List getAllUsersBlogs() {
         return blogFacade.findAll();
@@ -59,6 +59,7 @@ public class BlogBoxUserView {
     }
     
     public int getNumberOfBlogsOnUser() {
+    
         List<Blog> blogs = blogFacade.findAll();
         int k = 0;
         for (Blog temp : blogs) {

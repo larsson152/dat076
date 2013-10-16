@@ -1,5 +1,3 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -10,14 +8,14 @@
     <h:body>
         <h:form>
         <h:outputLabel value="Welcome,  " />
-        <h:outputText value="#{BlogBoxView.user.name}"/>
+        <h:outputText value="#{blogBoxView.user.name}"/>
         <h:outputText value="!"/>
         <br/>
         <h:outputLabel value="Choose your blog below" />
-        <c:forEach var="blog" items="#{BlogBoxUserView.getBlogsOnUser(BlogBoxView.user)}">
+        <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(blogBoxView.user)}">
             <br/>
             <h:outputText value =" #{blog.name}"/>
-            <h:commandButton action="#{BlogBoxUserView.loginBlog(blog,BlogBoxView.user)}" value="Enter"/>
+            <h:commandButton action="#{blogBoxUserView.loginBlog(blog,blogBoxView.user)}" value="Enter"/>
         </c:forEach>
         
         <br/>
@@ -25,12 +23,12 @@
             <h:outputLabel value="Create a new blog here:" />
             <br/>
             <h:outputLabel value="Blog name:"/>
-            <h:inputText value="#{BlogBoxUserCreate.blog.name}"/>
+            <h:inputText value="#{blogBoxUserCreate.blog.name}"/>
             <br/>
-            <h:commandButton action="#{BlogBoxUserCreate.createBlog(BlogBoxView.user)}" value="Create new blog!"/>
+            <h:commandButton action="#{blogBoxUserCreate.createBlog(blogBoxView.user)}" value="Create new blog!"/>
              <br/>
             <h:commandButton action="index" value="index!"/>
-            <h:commandButton action="#{BlogBoxView.logoutUser()}" value="Logout!"/>
+            <h:commandButton action="#{blogBoxView.logoutUser()}" value="Logout!"/>
         </h:form>
     </h:body>
 </html>

@@ -10,16 +10,15 @@ import entities.BlogBoxUser;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.*;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author larsson152
  */
-@ManagedBean(name = "BlogBoxUserCreate")
+@Named
 @RequestScoped
 public class BlogBoxUserCreate {
     
@@ -85,7 +84,6 @@ public class BlogBoxUserCreate {
             }
         }        
         blogFacade.create(blog);
-        
         return "user";
     }
 }
