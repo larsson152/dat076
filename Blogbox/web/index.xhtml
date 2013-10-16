@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>BlogBox</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <c:if test="#{!BlogBoxView.hasUser()}">
+                <h:form>
+                    <h:outputLabel value="Name:"/><h:inputText value="#{BlogBoxCreate.user.name}"/>
+                    <br/>
+                    <h:outputLabel value="Email:"/><h:inputText value="#{BlogBoxCreate.user.email}"/>
+                    <br/>
+                    <h:commandButton action="#{BlogBoxCreate.createUser()}" value="Create user !"/>
+                    <br/>
+                    <h:commandButton action="#{BlogBoxView.loginUser(BlogBoxCreate.user)}" value=" Login!"/>
+                </h:form>
+            </c:if> 
+            
+            <c:if test="#{BlogBoxView.hasUser()}">
+                <h:form>
+                    <h:outputLabel value="You are logged in with :"/>
+                    <h:outputLabel value="#{BlogBoxView.user.name}:"/>
+                    <br/>
+                    <h:commandButton action="user" value=" Go to blogs!"/>
+                </h:form>
+            </c:if>
+        </f:view>
+    </h:body>
+</html>
+

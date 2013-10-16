@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>#{BlogBoxUserView.blog.name}</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel value="Your username is: " />
+            <h:outputText value="#{BlogBoxView.user.name}"/>
+            <br/>
+            <h:outputLabel value="This is blog : " />
+            <h:outputText value="#{BlogBoxUserView.blog.name}"/>
+            <br/>
+            <h:outputLabel value="And you have " />
+            <h:outputText value="#{BlogBoxUserView.getNumberOfBlogsOnUser()}"/>
+            <h:outputText value=" blogs! This is one of them."/>
+            <br/>
+
+
+            <c:forEach var="blogPost" items="#{BlogPostView.getBlogPostsOnBlog(BlogBoxUserView.blog)}">
+                <h:outputText value ="Title : #{blogPost.title}"/>
+                <br/>
+                <h:outputText value ="Message :#{blogPost.message}"/>
+                <br/>
+                <br/>
+            </c:forEach>
+
+            <h:outputLabel value="Create a new blogPost here:" />
+            <br/>
+            <h:outputLabel value="BlogPost Title:"/>
+            <h:inputText value="#{BlogPostView.blogPost.title}"/>
+            <br/>
+            <h:outputLabel value="BlogPost message:"/>
+            <h:inputText value="#{BlogPostView.blogPost.message}"/>
+            <br/>
+            <h:commandButton action="#{BlogPostView.createBlogPost(BlogBoxUserView.blog)}" value="Create new blogPost!"/>
+            <br/>
+            <h:commandButton action="user" value="BlogList!"/>
+            <h:commandButton action="index" value="index!"/>
+        </h:form>
+    </h:body>
+</html>
+
