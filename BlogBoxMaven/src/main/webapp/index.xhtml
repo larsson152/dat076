@@ -4,32 +4,83 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:c="http://java.sun.com/jsp/jstl/core">
-    <h:head>
-        <title>BlogBox</title>
-    </h:head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Blogbox</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+        <link href="css/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+        <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+    </head>
     <h:body>
         <f:view>
+            <div id="header-wrapper">
+                <div id="header" class="container">
+                    <div id="menu">
+                        <ul>
+                            <li class="current_page_item"><a href="index.xhtml" accesskey="1" title="">Homepage</a></li>
+                            <li><a href="blog.xhtml" accesskey="2" title="">Blogs</a></li>
+                        </ul>
+                    </div>
+                    <div id="logo">
+                        <h1><a href="index.xhtml">Blogbox</a></h1>
+                    </div>
+                </div>
+            </div>
             <c:if test="#{!BlogBoxView.hasUser()}">
-                <h:form>
-                    <h:outputLabel value="Name:"/><h:inputText value="#{BlogBoxCreate.user.name}"/>
-                    <br/>
-                    <h:outputLabel value="Password:"/><h:inputSecret value="#{BlogBoxCreate.user.password}"/>
-                    <br/>
-                    <h:commandButton action="#{BlogBoxCreate.createUser()}" value="Create user !"/>
-                    <br/>
-                    <h:commandButton action="#{BlogBoxView.loginUser(BlogBoxCreate.user)}" value=" Login!"/>
-                </h:form>
+                <div id="wrapper2">
+                    <div id="newsletter" class="container">
+                        <div class="title">
+                            <h2>Log in or register</h2>
+                            <span class="byline">Fill in your information below</span> 
+                        </div>
+                        <div class="content">
+                            <h:form>
+                                <div class="row half">
+                                    <div class="6u">
+                                        <h:outputLabel value="Name:"/><h:inputText class="text" value="#{BlogBoxCreate.user.name}"/>
+                                        <br/>
+                                    </div>
+
+                                    <div class="6u">
+                                        <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{BlogBoxCreate.user.password}"/>
+                                        <br/>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="12u">
+                                        <h:commandButton class ="button submit" action="#{BlogBoxCreate.createUser()}" value="Register new user"/>
+                                        <h:commandButton class ="button submit" action="#{BlogBoxView.loginUser(BlogBoxCreate.user)}" value="Login"/>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
             </c:if> 
-            
+
             <c:if test="#{BlogBoxView.hasUser()}">
-                <h:form>
-                    <h:outputLabel value="You are logged in with :"/>
-                    <h:outputLabel value="#{BlogBoxView.user.name}:"/>
-                    <br/>
-                    <h:commandButton action="user" value=" Go to blogs!"/>
-                </h:form>
+                <div id="wrapper2">
+                    <div id="newsletter" class="container">
+                        <h:form>
+                            <div class="title">
+                                <div class="6u">
+                                    <h2>Welcome, #{BlogBoxView.user.name}! </h2>
+                                </div>
+                            </div>
+                            <h:commandButton class ="button submit" action="user" value="Your blogs"/>
+                        </h:form>
+                    </div>
+                </div>
             </c:if>
         </f:view>
     </h:body>
 </html>
+
+
 
