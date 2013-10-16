@@ -31,17 +31,18 @@
         <div id="wrapper2">
             <div id="newsletter" class="container">
                 <div class="title">
-                    <h2><h:outputText value="#{BlogBoxUserView.blog.name}"/></h2>
+                    <h2><h:outputText value="New BlogPost"/></h2>
                     <span class="byline">By: <h:outputText value="#{BlogBoxView.user.name}"/></span></div>
                 <div class="content">
                     <h:form>
-                        <c:forEach var="blogPost" items="#{BlogPostView.getBlogPostsOnBlog(BlogBoxUserView.blog)}">
-                            <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
-                            <br/>
-                            <h:outputText value ="#{blogPost.message}"/>
-                            <br/>
-                        </c:forEach>
-                        <h:commandButton class="button submit" action="createblogpost" value="Create new blogPost!"/>
+                        <h:outputLabel value="BlogPost Title:"/>
+                        <h:inputText class="text" value="#{BlogPostView.blogPost.title}"/>
+                        <br/>
+                        <h:outputLabel value="BlogPost message:"/>
+                        <h:inputTextarea value="#{BlogPostView.blogPost.message}" cols="30" rows="10"/>
+                        <br/>
+                        <h:commandButton class="button submit" action="#{BlogPostView.createBlogPost(BlogBoxUserView.blog)}" value="SUBMIT"/>
+                        <h:commandButton class="button submit" action="blog" value="CANCEL"/>
                         <br/>
                     </h:form>
                 </div>
