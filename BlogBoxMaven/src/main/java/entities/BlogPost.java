@@ -5,12 +5,12 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -25,6 +25,8 @@ public class BlogPost implements Serializable {
     private String title;
     private String message;
   
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date postDate;
   
     private Blog blog;
     
@@ -50,6 +52,14 @@ public class BlogPost implements Serializable {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Date getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
     }
 
     public Blog getBlog() {

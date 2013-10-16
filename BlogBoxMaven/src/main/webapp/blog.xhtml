@@ -23,6 +23,8 @@
             <c:forEach var="blogPost" items="#{BlogPostView.getBlogPostsOnBlog(BlogBoxUserView.blog)}">
                 <h:outputText value ="Title : #{blogPost.title}"/>
                 <br/>
+                <h:outputText value ="Date :#{blogPost.postDate}"/>
+                <br/>
                 <h:outputText value ="Message :#{blogPost.message}"/>
                 <br/>
                 <br/>

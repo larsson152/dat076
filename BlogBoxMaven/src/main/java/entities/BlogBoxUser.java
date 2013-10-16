@@ -4,14 +4,11 @@
  */
 package entities;
 
-import boundary.BlogFacade;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -28,7 +25,15 @@ public class BlogBoxUser implements Serializable {
     @NotNull
     private String name;
     @NotNull
-    private String email;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 
     public String getName() {
@@ -38,19 +43,10 @@ public class BlogBoxUser implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getEmail() {
-        return email;
-    }
     
     public boolean isNotNull(){
-       return name!=null && email !=null; 
+       return name!=null && password !=null; 
     }
-    
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
 
     public Long getId() {
         return id;

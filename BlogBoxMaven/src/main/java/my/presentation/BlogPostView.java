@@ -8,6 +8,7 @@ import boundary.BlogPostFacade;
 import entities.Blog;
 import entities.BlogPost;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.*;
@@ -72,8 +73,9 @@ public class BlogPostView {
     }
     
     public String createBlogPost(Blog blog){
-        System.out.println("hej");
         blogPost.setBlog(blog);
+        Calendar cal = Calendar.getInstance();
+        blogPost.setPostDate(cal.getTime());
         blogPostFacade.create(blogPost);
 
         return "blog";
