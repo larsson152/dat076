@@ -55,7 +55,6 @@ public class BlogBoxView implements Serializable{
 
     public String loginUser(BlogBoxUser tempuser) {
         this.user = tempuser;
-        System.out.println(" 1  " + user.getName() + " 2  " + user.getPassword() + " TTT  " + user.getId());
         List<BlogBoxUser> users = blogBoxUserFacade.findAll();
         for (BlogBoxUser temp : users) {
             if (temp.getName().equals(user.getName()) && temp.getPassword().equals(user.getPassword())) {

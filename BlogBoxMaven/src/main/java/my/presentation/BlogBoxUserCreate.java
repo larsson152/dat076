@@ -25,6 +25,8 @@ public class BlogBoxUserCreate {
     @EJB
     private BlogFacade blogFacade;
     private Blog blog;
+    @Inject
+    private BlogBoxUserView blogBoxUserView;
 
     /**
      * Creates a new instance of BlogBoxUserView
@@ -84,6 +86,8 @@ public class BlogBoxUserCreate {
             }
         }        
         blogFacade.create(blog);
-        return "user";
+         blogBoxUserView.setBlog(blog);
+        return "blog";
     }
+    
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -35,6 +35,10 @@ public class BlogBoxUserView implements Serializable {
     
     public Blog getBlog() {
         return blog;
+    }
+
+    public void setBlog(Blog blog) {
+        this.blog = blog;
     }
     
     

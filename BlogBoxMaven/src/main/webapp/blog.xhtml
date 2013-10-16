@@ -32,11 +32,11 @@
         <div id="wrapper2">
             <div id="newsletter" class="container">
                 <div class="title">
-                    <h2><h:outputText value="#{BlogBoxUserView.blog.name}"/></h2>
-                    <span class="byline">By: <h:outputText value="#{BlogBoxView.user.name}"/></span></div>
+                    <h2><h:outputText value="#{blogBoxUserView.blog.name}"/></h2>
+                    <span class="byline">By: <h:outputText value="#{blogBoxView.user.name}"/></span></div>
                 <div class="content">
                     <h:form>
-                        <c:forEach var="blogPost" items="#{BlogPostView.getBlogPostsOnBlog(BlogBoxUserView.blog)}">
+                        <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
                             <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
                             <br/>
                             <h:outputText value ="#{blogPost.message}"/>
