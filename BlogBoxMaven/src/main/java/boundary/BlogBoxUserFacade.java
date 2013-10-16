@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class BlogBoxUserFacade extends AbstractFacade<BlogBoxUser> {
-    @PersistenceContext(unitName = "SimpleEE6AppPU")
+    @PersistenceContext(unitName = "BlogBoxPU")
     private EntityManager em;
 
     @Override

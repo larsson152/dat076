@@ -4,7 +4,7 @@
  */
 package boundary;
 
-import entities.Blog;
+import entities.BlogPost;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,8 +14,8 @@ import javax.persistence.PersistenceContext;
  * @author larsson152
  */
 @Stateless
-public class BlogFacade extends AbstractFacade<Blog> {
-    @PersistenceContext(unitName = "SimpleEE6AppPU")
+public class BlogPostFacade extends AbstractFacade<BlogPost> {
+    @PersistenceContext(unitName = "BlogBoxPU")
     private EntityManager em;
 
     @Override
@@ -23,8 +23,8 @@ public class BlogFacade extends AbstractFacade<Blog> {
         return em;
     }
 
-    public BlogFacade() {
-        super(Blog.class);
+    public BlogPostFacade() {
+        super(BlogPost.class);
     }
     
 }
