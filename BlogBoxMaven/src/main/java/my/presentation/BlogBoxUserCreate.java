@@ -21,7 +21,7 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class BlogBoxUserCreate {
-    
+
     @EJB
     private BlogFacade blogFacade;
     private Blog blog;
@@ -34,15 +34,15 @@ public class BlogBoxUserCreate {
     public BlogBoxUserCreate() {
         this.blog = new Blog();
     }
-    
+
     public Blog getBlog() {
         return blog;
     }
-    
+
     public List getAllUsersBlogs() {
         return blogFacade.findAll();
     }
-    
+
     public List<Blog> getBlogsOnUser(BlogBoxUser user) {
         blog.setUser(user);
         List<Blog> blogs = new ArrayList<Blog>();
@@ -52,15 +52,15 @@ public class BlogBoxUserCreate {
                 blogs.add(temp);
                 System.out.println("Blogs " + temp.getName());
             }
-            
+
         }
         return blogs;
     }
-    
+
     public int getNumberOfBlogs() {
         return blogFacade.findAll().size();
     }
-    
+
     public int getNumberOfBlogsOnUser() {
         List<Blog> blogs = blogFacade.findAll();
         int k = 0;
@@ -69,24 +69,24 @@ public class BlogBoxUserCreate {
                 k++;
                 System.out.println("Blogs " + temp.getName());
             }
-            
+
         }
         return k;
     }
-    
+
     public String createBlog(BlogBoxUser user) {
-        
+
         blog.setUser(user);
-        
+
         List<Blog> blogs = getBlogsOnUser(user);
         for (Blog temp : blogs) {
-            if (temp.getName().equals(blog.getName()) || blog.getName().equals("")) {            
-                
+            if (temp.getName().equals(blog.getName()) || blog.getName().equals("")) {
+
                 return "user";
             }
-        }        
+        }
         blogFacade.create(blog);
-         blogBoxUserView.setBlog(blog);
+        blogBoxUserView.setBlog(blog);
         return "blog";
     }
     
