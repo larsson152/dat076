@@ -71,6 +71,8 @@ public class BlogBoxView implements Serializable{
     public String logoutUser() {
         HttpSession httpSession = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         httpSession.invalidate();
+        user.setName(null);
+        user.setPassword(null);
         return "index";
     }
 }
