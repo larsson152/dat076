@@ -88,4 +88,11 @@ public class BlogBoxUserView implements Serializable {
         }        
         return "user";
     }
+    
+     public String enterBlog(Blog tempBlog,BlogBoxUser user) {
+
+        this.blog = tempBlog;
+        blog.setUser(user);
+        return "viewBlogPosts";
+    }
 }

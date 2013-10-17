@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+        <link href="css/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#effect").effect("slide", 500);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="menu">
+                    <ul>
+                        <li class="current_page_item"><a href="index.xhtml" accesskey="1" title="">Homepage</a></li>
+                        <li><a href="blog.xhtml" accesskey="2" title="">Blogs</a></li>
+                    </ul>
+                </div>
+                <div id="logo">
+                    <h1><a href="index.xhtml">Blogbox</a></h1>
+                </div>
+            </div>
+        </div>
+        <div id="effect">
+            <div id="wrapper2">
+                <div id="newsletter" class="container">
+                    <div class="title">
+                        <h2><h:outputText value="#{blogBoxUserView.blog.name}"/></h2>
+                        <span class="byline">By: <h:outputText value="#{blogBoxUserView.blog.user.name}"/></span></div>
+                    <div class="content">
+                        <h:form>
+                            <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
+                                <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
+                                <br/>
+                                <h:outputText value ="#{blogPost.message}"/>
+                                <br/>
+                            </c:forEach>
+                            <h:commandButton class="button submit" action="viewBlogs" value="BlogList!"/>
+                            <br/>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+        </div>
+    </body>
+</html>
+

@@ -23,45 +23,61 @@
 
     </head>
     <body>
-        <div id="header-wrapper">
-            <div id="header" class="container">
-                <div id="menu">
-                    <ul>
-                        <li class="current_page_item"><a href="index.xhtml" accesskey="1" title="">Homepage</a></li>
-                        <li><a href="blog.xhtml" accesskey="2" title="">Blogs</a></li>
-                    </ul>
+
+        <c:if test="#{!blogBoxView.hasUser()}">
+            <h:form>
+                <div class="content">
+                    <div class="row">
+                        <div class="12u">
+                            <h:commandButton class ="button submit" action="index" value="index"/>
+                        </div>
+                    </div>
                 </div>
-                <div id="logo">
-                    <h1><a href="index.xhtml">Blogbox</a></h1>
-                </div>
-            </div>
-        </div>
-        <div id="effect">
-            <div id="wrapper2">
-                <div id="newsletter" class="container">
-                    <div class="title">
-                        <h2><h:outputText value="New BlogPost on #{blogBoxUserView.blog.name}"/></h2>
-                        <span class="byline">By: <h:outputText value="#{blogBoxView.user.name}"/></span></div>
-                    <div class="content">
-                        <h:form>
-                            <h:outputLabel value="BlogPost Title:"/>
-                            <h:inputText class="text" value="#{blogPostCreate.blogPost.title}"/>
-                            <br/>
-                            <h:outputLabel value="BlogPost message:"/>
-                            <h:inputTextarea value="#{blogPostCreate.blogPost.message}" cols="30" rows="10"/>
-                            <br/>
-                            <h:commandButton class="button submit" action="#{blogPostCreate.createBlogPost(blogBoxUserView.blog)}" value="SUBMIT"/>
-                            <h:commandButton class="button submit" action="blog" value="CANCEL"/>
-                            <h:commandButton class="button submit" action="user" value="BlogList!"/>
-                            <br/>
-                        </h:form>
+            </h:form>
+        </c:if> 
+
+        <c:if test="#{blogBoxView.hasUser()}">
+
+            <div id="header-wrapper">
+                <div id="header" class="container">
+                    <div id="menu">
+                        <ul>
+                            <li class="current_page_item"><a href="index.xhtml" accesskey="1" title="">Homepage</a></li>
+                            <li><a href="blog.xhtml" accesskey="2" title="">Blogs</a></li>
+                        </ul>
+                    </div>
+                    <div id="logo">
+                        <h1><a href="index.xhtml">Blogbox</a></h1>
                     </div>
                 </div>
             </div>
-        </div>
+            <div id="effect">
+                <div id="wrapper2">
+                    <div id="newsletter" class="container">
+                        <div class="title">
+                            <h2><h:outputText value="New BlogPost on #{blogBoxUserView.blog.name}"/></h2>
+                            <span class="byline">By: <h:outputText value="#{blogBoxView.user.name}"/></span></div>
+                        <div class="content">
+                            <h:form>
+                                <h:outputLabel value="BlogPost Title:"/>
+                                <h:inputText class="text" value="#{blogPostCreate.blogPost.title}"/>
+                                <br/>
+                                <h:outputLabel value="BlogPost message:"/>
+                                <h:inputTextarea value="#{blogPostCreate.blogPost.message}" cols="30" rows="10"/>
+                                <br/>
+                                <h:commandButton class="button submit" action="#{blogPostCreate.createBlogPost(blogBoxUserView.blog)}" value="SUBMIT"/>
+                                <h:commandButton class="button submit" action="blog" value="CANCEL"/>
+                                <h:commandButton class="button submit" action="user" value="BlogList!"/>
+                                <br/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div id="copyright">
-            <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
-        </div>
+            <div id="copyright">
+                <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+            </div>
+        </c:if>     
     </body>
 </html>
