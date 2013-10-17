@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_40" class="java.beans.XMLDecoder">
+<java version="1.7.0_11" class="java.beans.XMLDecoder">
  <object class="com.horstmann.violet.ClassDiagramGraph">
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode0">
     <void property="attributes">
      <void property="text">
       <string>Long id
-List&lt;BlogPost&gt; blogPost
+BlogBoxUser user
 String name
 </string>
      </void>
@@ -15,8 +15,8 @@ String name
      <void property="text">
       <string>getId : long
 setId : void
-getBlogPost : List&lt;BlogPost&gt;
-setBlogPost : void
+setUser : Void
+getUser : BlogBoxUser
 getName : String
 setName : Void</string>
      </void>
@@ -32,19 +32,19 @@ setName : Void</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double0"/>
-      <double>455.0</double>
+      <double>655.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double0"/>
-      <double>60.0</double>
+      <double>63.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>455.0</double>
-     <double>60.0</double>
+     <double>655.0</double>
+     <double>63.0</double>
     </void>
    </object>
   </void>
@@ -54,20 +54,18 @@ setName : Void</string>
      <void property="text">
       <string>Long id
 String name
-String email
-List&lt;Blog&gt; blog</string>
+String password</string>
      </void>
     </void>
     <void property="methods">
      <void property="text">
       <string>getId : long
 setId : void
-getBlog : List&lt;Blog&gt;
-setBlog: void
 getName : String
 setName : Void
-getEmail : String
-setEmail : Void</string>
+getPassword : String
+setPassword: Void
+isNotNull : boolean</string>
      </void>
     </void>
     <void property="name">
@@ -82,19 +80,19 @@ setEmail : Void</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double1"/>
-      <double>229.0</double>
+      <double>396.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double1"/>
-      <double>35.0</double>
+      <double>60.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>229.0</double>
-     <double>35.0</double>
+     <double>396.0</double>
+     <double>60.0</double>
     </void>
    </object>
   </void>
@@ -104,7 +102,9 @@ setEmail : Void</string>
      <void property="text">
       <string>Long Id
 String title
-String message</string>
+String message
+Date postDate
+Blog blog</string>
      </void>
     </void>
     <void property="methods">
@@ -114,7 +114,11 @@ setId : void
 getTitle : String
 setTitle : void
 getMessage : String
-setMessage : Void</string>
+setMessage : Void
+getPostDate :Date
+setPostDate : Void
+setBlog : Blog
+getBlog : Blog</string>
      </void>
     </void>
     <void property="name">
@@ -129,19 +133,19 @@ setMessage : Void</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double2"/>
-      <double>730.0</double>
+      <double>1214.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double2"/>
-      <double>58.0</double>
+      <double>14.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>730.0</double>
-     <double>58.0</double>
+     <double>1214.0</double>
+     <double>14.0</double>
     </void>
    </object>
   </void>
@@ -156,9 +160,12 @@ Blog blog</string>
     <void property="methods">
      <void property="text">
       <string>getBlog : Blog
+setBlog : Void
 getAllUserBlogs :List
+getBlogsOnUser :List&lt;Blog&gt;
 getNumberOfBlogs : int
-createBlog : String</string>
+getNumberOfBlogsOnUser : int
+loginBlog : String</string>
      </void>
     </void>
     <void property="name">
@@ -172,19 +179,19 @@ createBlog : String</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double3"/>
-      <double>474.0</double>
+      <double>640.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double3"/>
-      <double>338.0</double>
+      <double>304.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>474.0</double>
-     <double>338.0</double>
+     <double>640.0</double>
+     <double>304.0</double>
     </void>
    </object>
   </void>
@@ -211,19 +218,19 @@ createBlog : String</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double4"/>
-      <double>620.0</double>
+      <double>735.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double4"/>
-      <double>543.0</double>
+      <double>580.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>620.0</double>
-     <double>543.0</double>
+     <double>735.0</double>
+     <double>580.0</double>
     </void>
    </object>
   </void>
@@ -238,8 +245,12 @@ createBlog : String</string>
     <void property="methods">
      <void property="text">
       <string>getUser : User
+setUser : Void
+hasUser : boolean
+getUsers :  List&lt;BlogBoxUser&gt; 
 getNumberOfUsers : int 
-createUser : String
+loginUser : String
+logoutUser : String
 </string>
      </void>
     </void>
@@ -254,19 +265,19 @@ createUser : String
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double5"/>
-      <double>155.0</double>
+      <double>336.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double5"/>
-      <double>351.0</double>
+      <double>299.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>155.0</double>
-     <double>351.0</double>
+     <double>336.0</double>
+     <double>299.0</double>
     </void>
    </object>
   </void>
@@ -293,59 +304,24 @@ createUser : String
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double6"/>
-      <double>193.0</double>
+      <double>233.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double6"/>
-      <double>611.0</double>
+      <double>622.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>193.0</double>
-     <double>611.0</double>
+     <double>233.0</double>
+     <double>622.0</double>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode7">
-    <void property="attributes">
-     <void property="text">
-      <string>BlogPostFacade blogPostFacade
-BlogPost blogPost</string>
-     </void>
-    </void>
-    <void property="name">
-     <void property="text">
-      <string>BlogPostView</string>
-     </void>
-    </void>
-   </object>
-   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double7">
-    <void class="java.awt.geom.Point2D$Double" method="getField">
-     <string>x</string>
-     <void method="set">
-      <object idref="Point2D$Double7"/>
-      <double>699.0</double>
-     </void>
-    </void>
-    <void class="java.awt.geom.Point2D$Double" method="getField">
-     <string>y</string>
-     <void method="set">
-      <object idref="Point2D$Double7"/>
-      <double>363.0</double>
-     </void>
-    </void>
-    <void method="setLocation">
-     <double>699.0</double>
-     <double>363.0</double>
-    </void>
-   </object>
-  </void>
-  <void method="addNode">
-   <object class="com.horstmann.violet.ClassNode" id="ClassNode8">
     <void property="attributes">
      <void property="text">
       <string>EntityManager em</string>
@@ -362,71 +338,75 @@ BlogPost blogPost</string>
      </void>
     </void>
    </object>
-   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double8">
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double7">
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>x</string>
      <void method="set">
-      <object idref="Point2D$Double8"/>
-      <double>952.0</double>
+      <object idref="Point2D$Double7"/>
+      <double>1321.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
-      <object idref="Point2D$Double8"/>
-      <double>606.0</double>
+      <object idref="Point2D$Double7"/>
+      <double>617.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>952.0</double>
-     <double>606.0</double>
+     <double>1321.0</double>
+     <double>617.0</double>
     </void>
    </object>
   </void>
   <void method="addNode">
-   <object class="com.horstmann.violet.ClassNode" id="ClassNode9">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode8">
     <void property="attributes">
      <void property="text">
       <string>BlogPostFacade blogPostFacade
-BlogPost blog</string>
+BlogPost blogPost</string>
      </void>
     </void>
     <void property="methods">
      <void property="text">
       <string>getBlogPost : BlogPost
+setBlogPost : Void
+getAllBlogPosts : List
 getNumberOfBlogPosts : int
+getBlogPostsOnBlog : List&lt;BlogPost&gt;
+getNumberOfBlogPostsOnBlog : int
 createBlogPost : String</string>
      </void>
     </void>
     <void property="name">
      <void property="text">
-      <string>BlogView</string>
+      <string>BlogPostView</string>
      </void>
     </void>
    </object>
-   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double9">
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double8">
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>x</string>
      <void method="set">
-      <object idref="Point2D$Double9"/>
-      <double>957.0</double>
+      <object idref="Point2D$Double8"/>
+      <double>1165.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
-      <object idref="Point2D$Double9"/>
-      <double>354.0</double>
+      <object idref="Point2D$Double8"/>
+      <double>314.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>957.0</double>
-     <double>354.0</double>
+     <double>1165.0</double>
+     <double>314.0</double>
     </void>
    </object>
   </void>
   <void method="addNode">
-   <object class="com.horstmann.violet.ClassNode" id="ClassNode10">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode9">
     <void property="attributes">
      <void property="text">
       <string>Class&lt;T&gt; entityClass
@@ -451,62 +431,166 @@ count : int</string>
      </void>
     </void>
    </object>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double9">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double9"/>
+      <double>744.0</double>
+     </void>
+    </void>
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>y</string>
+     <void method="set">
+      <object idref="Point2D$Double9"/>
+      <double>786.0</double>
+     </void>
+    </void>
+    <void method="setLocation">
+     <double>744.0</double>
+     <double>786.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode10">
+    <void property="attributes">
+     <void property="text">
+      <string> BlogBoxUserFacade blogBoxUserFacade
+ BlogBoxUser user
+ BlogBoxView blogBoxView</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>getUser : User
+hasUser : boolean
+getUsers :  List&lt;BlogBoxUser&gt; 
+getNumberOfUsers : int 
+createUser : String
+
+</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>BlogBoxCreate</string>
+     </void>
+    </void>
+   </object>
    <object class="java.awt.geom.Point2D$Double" id="Point2D$Double10">
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double10"/>
-      <double>608.0</double>
+      <double>11.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double10"/>
-      <double>763.0</double>
+      <double>307.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>608.0</double>
-     <double>763.0</double>
+     <double>11.0</double>
+     <double>307.0</double>
     </void>
    </object>
   </void>
-  <void method="connect">
-   <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+  <void method="addNode">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode11">
+    <void property="attributes">
+     <void property="text">
+      <string>BlogFacade blogFacade
+Blog blog
+BlogBoxUserView blogBoxUserView</string>
+     </void>
     </void>
-    <void property="endLabel">
-     <string>*</string>
+    <void property="methods">
+     <void property="text">
+      <string>getBlog : Blog
+getAllUserBlogs :List
+getBlogsOnUser :List&lt;Blog&gt;
+getNumberOfBlogs : int
+getNumberOfBlogsOnUser : int
+createBlog : String</string>
+     </void>
     </void>
-    <void property="startArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
-    </void>
-    <void property="startLabel">
-     <string>1</string>
+    <void property="name">
+     <void property="text">
+      <string>BlogBoxUserCreate</string>
+     </void>
     </void>
    </object>
-   <object idref="ClassNode1"/>
-   <object idref="ClassNode0"/>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double11">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double11"/>
+      <double>894.0</double>
+     </void>
+    </void>
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>y</string>
+     <void method="set">
+      <object idref="Point2D$Double11"/>
+      <double>313.0</double>
+     </void>
+    </void>
+    <void method="setLocation">
+     <double>894.0</double>
+     <double>313.0</double>
+    </void>
+   </object>
   </void>
-  <void method="connect">
-   <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+  <void method="addNode">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode12">
+    <void property="attributes">
+     <void property="text">
+      <string>BlogPostFacade blogPostFacade
+BlogPost blogPost
+BlogBoxView blogBoxView</string>
+     </void>
     </void>
-    <void property="endLabel">
-     <string>*</string>
+    <void property="methods">
+     <void property="text">
+      <string>getBlogPost : BlogPost
+setBlogPost : Void
+getAllBlogPosts : List
+getNumberOfBlogPosts : int
+getBlogPostsOnBlog : List&lt;BlogPost&gt;
+getNumberOfBlogPostsOnBlog : int
+createBlogPost : String</string>
+     </void>
     </void>
-    <void property="startArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
-    </void>
-    <void property="startLabel">
-     <string>1</string>
+    <void property="name">
+     <void property="text">
+      <string>BlogPostCreate</string>
+     </void>
     </void>
    </object>
-   <object idref="ClassNode0"/>
-   <object idref="ClassNode2"/>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double12">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double12"/>
+      <double>1455.0</double>
+     </void>
+    </void>
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>y</string>
+     <void method="set">
+      <object idref="Point2D$Double12"/>
+      <double>317.0</double>
+     </void>
+    </void>
+    <void method="setLocation">
+     <double>1455.0</double>
+     <double>317.0</double>
+    </void>
+   </object>
   </void>
   <void method="connect">
    <object class="com.horstmann.violet.ClassRelationshipEdge">
@@ -572,15 +656,105 @@ count : int</string>
     </void>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="startLabel">
+     <string>1</string>
+    </void>
+   </object>
+   <object idref="ClassNode8"/>
+   <object idref="ClassNode2"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="V"/>
+    </void>
+    <void property="lineStyle">
+     <object class="com.horstmann.violet.LineStyle" field="DOTTED"/>
+    </void>
+   </object>
+   <object idref="ClassNode8"/>
+   <object idref="ClassNode7"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
+    </void>
+   </object>
+   <object idref="ClassNode6"/>
+   <object idref="ClassNode9"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
+    </void>
+   </object>
+   <object idref="ClassNode4"/>
+   <object idref="ClassNode9"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
     </void>
    </object>
    <object idref="ClassNode7"/>
-   <object idref="ClassNode2"/>
+   <object idref="ClassNode9"/>
   </void>
   <void method="connect">
    <object class="com.horstmann.violet.ClassRelationshipEdge">
     <void property="bentStyle">
      <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endLabel">
+     <string>1</string>
+    </void>
+    <void property="startArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="startLabel">
+     <string>*</string>
+    </void>
+   </object>
+   <object idref="ClassNode2"/>
+   <object idref="ClassNode0"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endLabel">
+     <string>1</string>
+    </void>
+    <void property="startArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="startLabel">
+     <string>*</string>
+    </void>
+   </object>
+   <object idref="ClassNode0"/>
+   <object idref="ClassNode1"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endLabel">
+     <string>1</string>
     </void>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
@@ -589,8 +763,54 @@ count : int</string>
      <string>1</string>
     </void>
    </object>
-   <object idref="ClassNode9"/>
-   <object idref="ClassNode2"/>
+   <object idref="ClassNode10"/>
+   <object idref="ClassNode5"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.NoteEdge"/>
+   <object idref="ClassNode3"/>
+   <object idref="ClassNode3"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.NoteEdge"/>
+   <object idref="ClassNode11"/>
+   <object idref="ClassNode11"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endLabel">
+     <string>1</string>
+    </void>
+    <void property="startArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="startLabel">
+     <string>1</string>
+    </void>
+   </object>
+   <object idref="ClassNode11"/>
+   <object idref="ClassNode3"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endLabel">
+     <string>1</string>
+    </void>
+    <void property="startArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="startLabel">
+     <string>1</string>
+    </void>
+   </object>
+   <object idref="ClassNode12"/>
+   <object idref="ClassNode8"/>
   </void>
   <void method="connect">
    <object class="com.horstmann.violet.ClassRelationshipEdge">
@@ -601,44 +821,32 @@ count : int</string>
      <object class="com.horstmann.violet.LineStyle" field="DOTTED"/>
     </void>
    </object>
-   <object idref="ClassNode9"/>
-   <object idref="ClassNode8"/>
+   <object idref="ClassNode12"/>
+   <object idref="ClassNode7"/>
   </void>
   <void method="connect">
    <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
-    </void>
     <void property="endArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
+     <object class="com.horstmann.violet.ArrowHead" field="V"/>
+    </void>
+    <void property="lineStyle">
+     <object class="com.horstmann.violet.LineStyle" field="DOTTED"/>
     </void>
    </object>
-   <object idref="ClassNode6"/>
-   <object idref="ClassNode10"/>
-  </void>
-  <void method="connect">
-   <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
-    </void>
-    <void property="endArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
-    </void>
-   </object>
+   <object idref="ClassNode11"/>
    <object idref="ClassNode4"/>
-   <object idref="ClassNode10"/>
   </void>
   <void method="connect">
    <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
-    </void>
     <void property="endArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
+     <object class="com.horstmann.violet.ArrowHead" field="V"/>
+    </void>
+    <void property="lineStyle">
+     <object class="com.horstmann.violet.LineStyle" field="DOTTED"/>
     </void>
    </object>
-   <object idref="ClassNode8"/>
    <object idref="ClassNode10"/>
+   <object idref="ClassNode6"/>
   </void>
  </object>
 </java>
