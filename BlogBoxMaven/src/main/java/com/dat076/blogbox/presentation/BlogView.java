@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package my.presentation;
+package com.dat076.blogbox.presentation;
 
-import boundary.BlogFacade;
-import entities.Blog;
+import com.dat076.blogbox.boundary.BlogFacade;
+import com.dat076.blogbox.entities.Blog;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;

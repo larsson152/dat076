@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package boundary;
+package com.dat076.blogbox.boundary;
 
 import java.util.List;
 import javax.persistence.EntityManager;

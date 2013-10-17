@@ -2,16 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package com.dat076.blogbox.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -19,27 +16,26 @@ import javax.validation.constraints.NotNull;
  * @author Patrik Larsson
  */
 @Entity
-public class Blog implements Serializable {
+public class BlogBoxUser implements Serializable {
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotNull
     private String name;
+    @NotNull
+    private String password;
 
-    private BlogBoxUser user;
-
-    public Long getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setUser(BlogBoxUser user){
-        this.user = user;
-    }
+
     public String getName() {
         return name;
     }
@@ -47,9 +43,17 @@ public class Blog implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public boolean isNotNull(){
+       return name!=null && password !=null; 
+    }
 
-    public BlogBoxUser getUser(){
-        return user;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
@@ -62,10 +66,10 @@ public class Blog implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Blog)) {
+        if (!(object instanceof BlogBoxUser)) {
             return false;
         }
-        Blog other = (Blog) object;
+        BlogBoxUser other = (BlogBoxUser) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -74,7 +78,6 @@ public class Blog implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Blog[ id=" + id + " ]";
-    }
-    
+        return "entities.User[ id=" + id + " ]";
+    }    
 }

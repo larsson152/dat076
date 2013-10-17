@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package boundary;
+package com.dat076.blogbox.boundary;
 
-import entities.Blog;
+import com.dat076.blogbox.entities.Blog;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
