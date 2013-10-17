@@ -44,10 +44,22 @@
                 <h:form>
                     <div id="wrapper2">
                         <div id="newsletter" class="container">
+                            
+                            
+                            <div class="content">
+                                <div class="row">
+                                    <div class="12u">
+                                        <h:commandButton class ="button submit" action="index" value="index"/>
+                                        <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser()}" value="Logout"/>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="title">
-                                <h2><h:outputLabel value="Welcome, #{blogBoxView.user.name}!"/></h2>
+                                <h2>Welcome, #{blogBoxView.user.name}!</h2>
                                 <span class="byline">Choose your blog below</span>
                             </div>
+                            
 
                             <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(blogBoxView.user)}">
                                 <div class="content">
@@ -62,19 +74,18 @@
 
                             <br/>
                             <div class="title">
-                                <span class="byline"> Create a new blog here: </span>
+                                <h2> Create a new blog here: </h2>
                             </div>
                             <br/>
-                            <h:outputLabel value="Blog name:"/>
+                            <div class="title">
+                                <span class="byline">Blog name:</span>
+                            </div>
                             <h:inputText class="text" value="#{blogBoxUserCreate.blog.name}"/>
                             <br/>
                             <div class="content">
                                 <div class="row">
                                     <div class="12u">
                                         <h:commandButton class ="button submit" action="#{blogBoxUserCreate.createBlog(blogBoxView.user)}" value="Create new blog"/>
-                                        <br/>
-                                        <h:commandButton class ="button submit" action="index" value="index"/>
-                                        <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser()}" value="Logout"/>
                                     </div>
                                 </div>
                             </div>

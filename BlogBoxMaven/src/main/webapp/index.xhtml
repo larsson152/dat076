@@ -39,7 +39,51 @@
                     </div>
                 </div>
             </div>
+
             <div id="effect">
+                <div id="wrapper2">
+                    <div id="newsletter" class="container">
+
+
+                        <c:if test="#{blogBoxView.hasUser()}">
+                            <div id="wrapper2">
+                                <div id="newsletter" class="container">
+                                    <h:form>
+                                        <div class="title">
+                                            <div class="6u">
+                                                <h2>Welcome, #{blogBoxView.user.name}! </h2>
+                                            </div>
+                                        </div>
+                                        <h:commandButton class ="button submit" action="user" value="Your blogs"/>
+                                    </h:form>
+                                </div>
+                            </div>
+                        </c:if>
+
+
+
+                        <div class="title">
+                            <h2>Latest blogs</h2>
+                        </div>
+
+                        <c:forEach var="user" items="#{blogBoxView.getUsers()}">
+                            <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(user)}">
+                                <h:form>
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="12u">
+                                                <h:commandButton class ="button submit" value="#{blog.name}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </c:forEach>
+                        </c:forEach>
+                    </div>
+                </div>
+
+
+
                 <c:if test="#{!blogBoxView.hasUser()}">
                     <div id="wrapper2">
                         <div id="newsletter" class="container">
@@ -72,21 +116,6 @@
                         </div>
                     </div>
                 </c:if> 
-
-                <c:if test="#{blogBoxView.hasUser()}">
-                    <div id="wrapper2">
-                        <div id="newsletter" class="container">
-                            <h:form>
-                                <div class="title">
-                                    <div class="6u">
-                                        <h2>Welcome, #{blogBoxView.user.name}! </h2>
-                                    </div>
-                                </div>
-                                <h:commandButton class ="button submit" action="user" value="Your blogs"/>
-                            </h:form>
-                        </div>
-                    </div>
-                </c:if>
             </div>
             <div id="copyright">
                 <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
