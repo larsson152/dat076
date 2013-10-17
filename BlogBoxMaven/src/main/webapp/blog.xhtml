@@ -13,7 +13,14 @@
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
         <link href="css/css/style.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#effect").effect("slide", 500);
+            });
+        </script>
     </head>
     <body>
         <div id="header-wrapper">
@@ -29,23 +36,25 @@
                 </div>
             </div>
         </div>
-        <div id="wrapper2">
-            <div id="newsletter" class="container">
-                <div class="title">
-                    <h2><h:outputText value="#{blogBoxUserView.blog.name}"/></h2>
-                    <span class="byline">By: <h:outputText value="#{blogBoxView.user.name}"/></span></div>
-                <div class="content">
-                    <h:form>
-                        <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
-                            <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
+        <div id="effect">
+            <div id="wrapper2">
+                <div id="newsletter" class="container">
+                    <div class="title">
+                        <h2><h:outputText value="#{blogBoxUserView.blog.name}"/></h2>
+                        <span class="byline">By: <h:outputText value="#{blogBoxView.user.name}"/></span></div>
+                    <div class="content">
+                        <h:form>
+                            <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
+                                <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
+                                <br/>
+                                <h:outputText value ="#{blogPost.message}"/>
+                                <br/>
+                            </c:forEach>
+                            <h:commandButton class="button submit" action="createblogpost" value="Create new blogPost!"/>
+                            <h:commandButton class="button submit" action="user" value="BlogList!"/>
                             <br/>
-                            <h:outputText value ="#{blogPost.message}"/>
-                            <br/>
-                        </c:forEach>
-                        <h:commandButton class="button submit" action="createblogpost" value="Create new blogPost!"/>
-                        <h:commandButton class="button submit" action="user" value="BlogList!"/>
-                        <br/>
-                    </h:form>
+                        </h:form>
+                    </div>
                 </div>
             </div>
         </div>

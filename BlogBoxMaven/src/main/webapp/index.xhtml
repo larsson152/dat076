@@ -12,6 +12,14 @@
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
         <link href="css/css/style.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#effect").effect("slide", 500);
+            });
+        </script>
 
         <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -31,53 +39,58 @@
                     </div>
                 </div>
             </div>
-            <c:if test="#{!blogBoxView.hasUser()}">
-                <div id="wrapper2">
-                    <div id="newsletter" class="container">
-                        <div class="title">
-                            <h2>Log in or register</h2>
-                            <span class="byline">Fill in your information below</span> 
+            <div id="effect">
+                <c:if test="#{!blogBoxView.hasUser()}">
+                    <div id="wrapper2">
+                        <div id="newsletter" class="container">
+                            <div class="title">
+                                <h2>Log in or register</h2>
+                                <span class="byline">Fill in your information below</span> 
+                            </div>
+                            <div class="content">
+                                <h:form>
+                                    <div class="row half">
+                                        <div class="6u">
+                                            <h:outputLabel value="Name:"/><h:inputText class="text" value="#{blogBoxCreate.user.name}"/>
+                                            <br/>
+                                        </div>
+
+                                        <div class="6u">
+                                            <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{blogBoxCreate.user.password}"/>
+                                            <br/>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="12u">
+                                            <h:commandButton class ="button submit" action="#{blogBoxCreate.createUser()}" value="Register new user"/>
+                                            <h:commandButton class ="button submit" action="#{blogBoxView.loginUser(blogBoxCreate.user)}" value="Login"/>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
                         </div>
-                        <div class="content">
+                    </div>
+                </c:if> 
+
+                <c:if test="#{blogBoxView.hasUser()}">
+                    <div id="wrapper2">
+                        <div id="newsletter" class="container">
                             <h:form>
-                                <div class="row half">
+                                <div class="title">
                                     <div class="6u">
-                                        <h:outputLabel value="Name:"/><h:inputText class="text" value="#{blogBoxCreate.user.name}"/>
-                                        <br/>
-                                    </div>
-
-                                    <div class="6u">
-                                        <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{blogBoxCreate.user.password}"/>
-                                        <br/>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="12u">
-                                        <h:commandButton class ="button submit" action="#{blogBoxCreate.createUser()}" value="Register new user"/>
-                                        <h:commandButton class ="button submit" action="#{blogBoxView.loginUser(blogBoxCreate.user)}" value="Login"/>
+                                        <h2>Welcome, #{blogBoxView.user.name}! </h2>
                                     </div>
                                 </div>
+                                <h:commandButton class ="button submit" action="user" value="Your blogs"/>
                             </h:form>
                         </div>
                     </div>
-                </div>
-            </c:if> 
-
-            <c:if test="#{blogBoxView.hasUser()}">
-                <div id="wrapper2">
-                    <div id="newsletter" class="container">
-                        <h:form>
-                            <div class="title">
-                                <div class="6u">
-                                    <h2>Welcome, #{blogBoxView.user.name}! </h2>
-                                </div>
-                            </div>
-                            <h:commandButton class ="button submit" action="user" value="Your blogs"/>
-                        </h:form>
-                    </div>
-                </div>
-            </c:if>
+                </c:if>
+            </div>
+            <div id="copyright">
+                <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+            </div>
         </f:view>
     </h:body>
 </html>

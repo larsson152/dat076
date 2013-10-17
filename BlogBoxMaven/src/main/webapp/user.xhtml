@@ -1,3 +1,5 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -10,6 +12,14 @@
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
         <link href="css/css/style.css" rel="stylesheet" type="text/css" media="all" />
         <link href="css/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#effect").effect("slide", 500);
+            });
+        </script>
 
         <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -29,49 +39,54 @@
                 </div>
             </div>
         </div>
-        <f:view>
-            <h:form>
-                <div id="wrapper2">
-                    <div id="newsletter" class="container">
-                        <div class="title">
-                            <h2><h:outputLabel value="Welcome, #{blogBoxView.user.name}!"/></h2>
-                            <span class="byline">Choose your blog below</span>
-                        </div>
+        <div id="effect">
+            <f:view>
+                <h:form>
+                    <div id="wrapper2">
+                        <div id="newsletter" class="container">
+                            <div class="title">
+                                <h2><h:outputLabel value="Welcome, #{blogBoxView.user.name}!"/></h2>
+                                <span class="byline">Choose your blog below</span>
+                            </div>
 
-                        <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(blogBoxView.user)}">
+                            <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(blogBoxView.user)}">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="12u">
+                                            <h:commandButton class ="button submit" action="#{blogBoxUserView.loginBlog(blog,blogBoxView.user)}" value="#{blog.name}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+
+
+                            <br/>
+                            <div class="title">
+                                <span class="byline"> Create a new blog here: </span>
+                            </div>
+                            <br/>
+                            <h:outputLabel value="Blog name:"/>
+                            <h:inputText class="text" value="#{blogBoxUserCreate.blog.name}"/>
+                            <br/>
                             <div class="content">
                                 <div class="row">
                                     <div class="12u">
-                                        <h:commandButton class ="button submit" action="#{blogBoxUserView.loginBlog(blog,blogBoxView.user)}" value="#{blog.name}"/>
+                                        <h:commandButton class ="button submit" action="#{blogBoxUserCreate.createBlog(blogBoxView.user)}" value="Create new blog"/>
+                                        <br/>
+                                        <h:commandButton class ="button submit" action="index" value="index"/>
+                                        <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser()}" value="Logout"/>
                                     </div>
                                 </div>
                             </div>
-                        </c:forEach>
 
-
-                        <br/>
-                        <div class="title">
-                            <span class="byline"> Create a new blog here: </span>
                         </div>
-                        <br/>
-                        <h:outputLabel value="Blog name:"/>
-                        <h:inputText class="text" value="#{blogBoxUserCreate.blog.name}"/>
-                        <br/>
-                        <div class="content">
-                            <div class="row">
-                                <div class="12u">
-                                    <h:commandButton class ="button submit" action="#{blogBoxUserCreate.createBlog(blogBoxView.user)}" value="Create new blog"/>
-                                    <br/>
-                                    <h:commandButton class ="button submit" action="index" value="index"/>
-                                    <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser()}" value="Logout"/>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
-            </h:form>
-        </f:view>
+                </h:form>
+            </f:view>
+        </div>
+        <div id="copyright">
+            <p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+        </div>
     </h:body>
 </html>
 
