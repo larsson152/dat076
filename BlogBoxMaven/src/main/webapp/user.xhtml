@@ -40,14 +40,9 @@
 
                         <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(blogBoxView.user)}">
                             <div class="content">
-                                <div class="row half">
-                                    <div class="6u">
-                                        <h:outputLabel value ="#{blog.name}"/>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="12u">
-                                        <h:commandButton class ="button submit" action="#{blogBoxUserView.loginBlog(blog,blogBoxView.user)}" value="Enter"/>
+                                        <h:commandButton class ="button submit" action="#{blogBoxUserView.loginBlog(blog,blogBoxView.user)}" value="#{blog.name}"/>
                                     </div>
                                 </div>
                             </div>
@@ -56,11 +51,11 @@
 
                         <br/>
                         <div class="title">
-                            <span class="byline"> Create a new blog here:" </span>
+                            <span class="byline"> Create a new blog here: </span>
                         </div>
                         <br/>
                         <h:outputLabel value="Blog name:"/>
-                        <h:inputText value="#{blogBoxUserCreate.blog.name}"/>
+                        <h:inputText class="text" value="#{blogBoxUserCreate.blog.name}"/>
                         <br/>
                         <div class="content">
                             <div class="row">
