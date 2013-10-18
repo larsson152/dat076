@@ -62,12 +62,12 @@ public class BlogBoxUserCreate {
         for (Blog temp : blogs) {
             if (temp.getName().equals(blog.getName()) || blog.getName().equals("")) {
 
-                return "user";
+                return "user?faces-redirect=true&includeViewParams=true";
             }
         }
         blogFacade.create(blog);
         blogBoxUserView.setBlog(blog);
-        return "blog";
+        return "blog?faces-redirect=true&includeViewParams=true";
     }
     
 }

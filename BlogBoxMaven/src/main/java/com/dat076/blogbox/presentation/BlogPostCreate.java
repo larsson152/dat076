@@ -46,6 +46,6 @@ public class BlogPostCreate implements Serializable{
         blogPost.setPostDate(cal.getTime());
         blogPostFacade.create(blogPost);
         blogPostView.setBlogPost(blogPost);
-        return "blog";
+        return "blog?faces-redirect=true&includeViewParams=true";
     }
 }

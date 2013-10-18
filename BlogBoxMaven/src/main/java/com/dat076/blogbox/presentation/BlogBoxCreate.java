@@ -42,11 +42,11 @@ public class BlogBoxCreate {
         for (BlogBoxUser temp : blogBoxUserFacade.findAll()) {
             if (temp.getName().equals(user.getName()) && temp.getPassword().equals(user.getPassword())) {
 
-                return "index";
+                return "index?faces-redirect=true&includeViewParams=true";
             }
         }
         this.blogBoxUserFacade.create(user);
         blogBoxView.setUser(user);
-        return "user";
+        return "user?faces-redirect=true&includeViewParams=true";
     }
 }

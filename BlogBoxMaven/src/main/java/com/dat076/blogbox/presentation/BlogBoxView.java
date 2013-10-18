@@ -59,12 +59,12 @@ public class BlogBoxView implements Serializable{
         for (BlogBoxUser temp : users) {
             if (temp.getName().equals(user.getName()) && temp.getPassword().equals(user.getPassword())) {
                 user = temp;
-                return "user";
+                return "user?faces-redirect=true&includeViewParams=true";
             }
         }
         user.setName(null);
         user.setPassword(null);
-        return "index";
+        return "index?faces-redirect=true&includeViewParams=true";
     }
     //logout user and removes admin rights
     public String logoutUser() {
@@ -72,6 +72,6 @@ public class BlogBoxView implements Serializable{
         httpSession.invalidate();
         user.setName(null);
         user.setPassword(null);
-        return "index";
+        return "index?faces-redirect=true&includeViewParams=true";
     }
 }
