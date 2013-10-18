@@ -20,6 +20,7 @@
                 $("#effect").effect("slide", 500);
             });
         </script>
+        <script src="js/clock.js"></script>
 
         <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -28,14 +29,13 @@
         <f:view>
             <div id="header-wrapper">
                 <div id="header" class="container">
-                    <div id="menu">
-                        <p id="clock"></p>
-                        <script>
-                            document.getElementById(clock).innerHTML = "test";
-                        </script>
+                    <div id="menu">  
+                        <body onload="startTime()"/>
+                        <h1><a onmouseover="showDate()" onmouseout="startTime()" href="" id="clock"></a></h1>
                     </div>
                     <div id="logo">
                         <h1><a href="">Blogbox</a></h1>
+
                     </div>
                 </div>
             </div>
