@@ -34,12 +34,12 @@ public class BlogBoxUserCreate {
     public BlogBoxUserCreate() {
         this.blog = new Blog();
     }
-
+    //returns the blog 
     public Blog getBlog() {
         return blog;
     }
 
-
+   //returns a list with all the blogs linked to a user
   public List<Blog> getBlogsOnUser(BlogBoxUser user) {
         blog.setUser(user);
         List<Blog> blogs = new ArrayList<Blog>();
@@ -53,7 +53,7 @@ public class BlogBoxUserCreate {
         }
         return blogs;
     }
-
+    //creates a new blog and puts it in a sessionScope 
     public String createBlog(BlogBoxUser user) {
 
         blog.setUser(user);

@@ -35,11 +35,11 @@ public class BlogPostCreate implements Serializable{
     public BlogPostCreate() {
         this.blogPost = new BlogPost();
     }
-    
+    //returns the blogpost
     public BlogPost getBlogPost(){
         return blogPost;
     }
-    
+    //creates a new blogpost in the blog
     public String createBlogPost(Blog blog){
         blogPost.setBlog(blog);
         Calendar cal = Calendar.getInstance();

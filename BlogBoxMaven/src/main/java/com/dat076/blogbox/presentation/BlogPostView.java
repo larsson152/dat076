@@ -33,26 +33,25 @@ public class BlogPostView implements Serializable{
     public BlogPostView() {
         this.blogPost = new BlogPost();
     }
-    
+    //returns the blogPost
     public BlogPost getBlogPost(){
         return blogPost;
     }
-
+    //gives BlogPostView a new blogPost
     public void setBlogPost(BlogPost blogPost) {
         this.blogPost = blogPost;
     }
     
-    
-    
+    //returns all blogPost in dataBase
     public List getAllBlogPosts(){
         return blogPostFacade.findAll();
     }
-    
+    //retuns how many blogPost in database
     public int getNumberOfBlogPost(){
         return blogPostFacade.findAll().size();
     }
-    
-     public List<BlogPost> getBlogPostsOnBlog(Blog blog) {
+    //retuns all blogPost on a blog
+    public List<BlogPost> getBlogPostsOnBlog(Blog blog) {
         blogPost.setBlog(blog);
         List<BlogPost> blogPosts = new ArrayList<BlogPost>();
         List<BlogPost> tempList = blogPostFacade.findAll();
@@ -65,7 +64,7 @@ public class BlogPostView implements Serializable{
         }
         return blogPosts;
     }
-    
+    //returns how many blogPosts a blog has
     public int getNumberOfPostOnBlog(){
         List<BlogPost>blogs = blogPostFacade.findAll();
         int k=0;
@@ -78,7 +77,7 @@ public class BlogPostView implements Serializable{
       }
         return k ;
     }
-    
+    //creats a new BlogPost on blog
     public String createBlogPost(Blog blog){
         blogPost.setBlog(blog);
         Calendar cal = Calendar.getInstance();

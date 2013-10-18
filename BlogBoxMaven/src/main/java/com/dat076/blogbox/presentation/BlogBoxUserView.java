@@ -32,20 +32,20 @@ public class BlogBoxUserView implements Serializable {
     public BlogBoxUserView() {
         this.blog = new Blog();
     }
-    
+    //returns the blog
     public Blog getBlog() {
         return blog;
     }
-
+    //gives the BlogBoxUserView a new blog
     public void setBlog(Blog blog) {
         this.blog = blog;
     }
     
-    
+    //returns all blogs in database
     public List getAllUsersBlogs() {
         return blogFacade.findAll();
     }
-    
+    //retuns all blogs linked to a user
     public List<Blog> getBlogsOnUser(BlogBoxUser user) {
         blog.setUser(user);
         List<Blog> blogs = new ArrayList<Blog>();
@@ -57,11 +57,11 @@ public class BlogBoxUserView implements Serializable {
         }
         return blogs;
     }
-    
+    //returns how many blogs in database
     public int getNumberOfBlogs() {
         return blogFacade.findAll().size();
     }
-    
+    //retuns how many blog linked to a user 
     public int getNumberOfBlogsOnUser() {
     
         List<Blog> blogs = blogFacade.findAll();
@@ -74,7 +74,7 @@ public class BlogBoxUserView implements Serializable {
         }
         return k;
     }
-    
+    //logins to a blog with admin rights
     public String loginBlog(Blog tempBlog,BlogBoxUser user) {
 
         this.blog = tempBlog;
@@ -88,7 +88,7 @@ public class BlogBoxUserView implements Serializable {
         }        
         return "user";
     }
-    
+    //enters a blog with view only rights
      public String enterBlog(Blog tempBlog,BlogBoxUser user) {
 
         this.blog = tempBlog;

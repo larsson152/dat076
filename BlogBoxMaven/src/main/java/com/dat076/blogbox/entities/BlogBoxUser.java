@@ -43,7 +43,7 @@ public class BlogBoxUser implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    
+    //if BlogBoxUser has name and password
     public boolean isNotNull(){
        return name!=null && password !=null; 
     }

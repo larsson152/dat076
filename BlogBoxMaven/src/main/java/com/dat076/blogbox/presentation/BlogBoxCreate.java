@@ -33,11 +33,11 @@ public class BlogBoxCreate {
     public BlogBoxCreate() {
         this.user = new BlogBoxUser();
     }
-
+    //return the user the requestScope has
     public BlogBoxUser getUser() {
         return user;
     }
-
+    //creates a new user and puts it in a sessionScope
     public String createUser() {
         for (BlogBoxUser temp : blogBoxUserFacade.findAll()) {
             if (temp.getName().equals(user.getName()) && temp.getPassword().equals(user.getPassword())) {
