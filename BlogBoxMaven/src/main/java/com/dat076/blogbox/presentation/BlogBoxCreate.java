@@ -38,14 +38,6 @@ public class BlogBoxCreate {
         return user;
     }
 
-    public boolean hasUser() {
-        return user.isNotNull();
-    }
-
-    public int getNumberOfUsers() {
-        return blogBoxUserFacade.findAll().size();
-    }
-
     public String createUser() {
         for (BlogBoxUser temp : blogBoxUserFacade.findAll()) {
             if (temp.getName().equals(user.getName()) && temp.getPassword().equals(user.getPassword())) {

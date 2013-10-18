@@ -40,41 +40,6 @@ public class BlogPostCreate implements Serializable{
         return blogPost;
     }
     
-    public List getAllBlogPosts(){
-        return blogPostFacade.findAll();
-    }
-    
-    public int getNumberOfBlogPost(){
-        return blogPostFacade.findAll().size();
-    }
-    
-     public List<BlogPost> getBlogPostsOnBlog(Blog blog) {
-        blogPost.setBlog(blog);
-        List<BlogPost> blogPosts = new ArrayList<BlogPost>();
-        List<BlogPost> tempList = blogPostFacade.findAll();
-        for (BlogPost temp : tempList) {
-            if (temp.getBlog().getId().equals(blogPost.getBlog().getId())) {
-                blogPosts.add(temp);
-                System.out.println("Blogs " + temp.getTitle());
-            }
-            
-        }
-        return blogPosts;
-    }
-    
-    public int getNumberOfPostOnBlog(){
-        List<BlogPost>blogs = blogPostFacade.findAll();
-        int k=0;
-      for(BlogPost temp: blogs){
-          if(temp.getBlog().getId().equals(blogPost.getBlog().getId())){
-              k++;
-              System.out.println("Mes "+temp.getMessage());
-          }
-              
-      }
-        return k ;
-    }
-    
     public String createBlogPost(Blog blog){
         blogPost.setBlog(blog);
         Calendar cal = Calendar.getInstance();

@@ -39,11 +39,8 @@ public class BlogBoxUserCreate {
         return blog;
     }
 
-    public List getAllUsersBlogs() {
-        return blogFacade.findAll();
-    }
 
-    public List<Blog> getBlogsOnUser(BlogBoxUser user) {
+  public List<Blog> getBlogsOnUser(BlogBoxUser user) {
         blog.setUser(user);
         List<Blog> blogs = new ArrayList<Blog>();
         List<Blog> tempList = blogFacade.findAll();
@@ -55,23 +52,6 @@ public class BlogBoxUserCreate {
 
         }
         return blogs;
-    }
-
-    public int getNumberOfBlogs() {
-        return blogFacade.findAll().size();
-    }
-
-    public int getNumberOfBlogsOnUser() {
-        List<Blog> blogs = blogFacade.findAll();
-        int k = 0;
-        for (Blog temp : blogs) {
-            if (temp.getUser().getId().equals(blog.getUser().getId())) {
-                k++;
-                System.out.println("Blogs " + temp.getName());
-            }
-
-        }
-        return k;
     }
 
     public String createBlog(BlogBoxUser user) {
