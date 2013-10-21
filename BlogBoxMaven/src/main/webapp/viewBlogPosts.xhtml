@@ -21,10 +21,16 @@
                 $("#effect").effect("slide", 500);
             });
         </script>
+        <script src="js/clock.js"></script>
     </head>
     <body>
         <div id="header-wrapper">
             <div id="header" class="container">
+                <div id="menu">  
+                        <body onload="startTime();"/>
+                        <h1><p onmouseover="showDate();" onmouseout="startTime();" href="" id="clock"></p></h1>
+                        <p>Tip: Hold mouse over clock to see the date!</p>
+                    </div>
                 <div id="logo">
                     <h1><a href="">Blogbox</a></h1>
                 </div>
@@ -35,7 +41,9 @@
                 <div id="newsletter" class="container">
                     <div class="title">
                         <h2><h:outputText value="#{blogBoxUserView.blog.name}"/></h2>
-                        <span class="byline">By: <h:outputText value="#{blogBoxUserView.blog.user.name}"/></span></div>
+                        <span class="byline">By: <h:outputText value="#{blogBoxUserView.blog.user.name}"/></span>
+                        
+                    </div>
                     <div class="content">
                         <h:form>
                             <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
