@@ -48,6 +48,7 @@
                         <h:form>
                             <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
                                 <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
+                                <h3><strong><h:outputText value ="#{blogPost.postDate}"/></strong></h3>
                                 <br/>
                                 <h:outputText value ="#{blogPost.message}"/>
                                 <br/>
