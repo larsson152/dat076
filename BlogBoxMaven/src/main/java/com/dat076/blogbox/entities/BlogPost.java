@@ -16,6 +16,7 @@ import javax.persistence.Temporal;
 /**
  *
  * @author Patrik Larsson
+ * the messages that is posted on a blog
  */
 @Entity
 public class BlogPost implements Serializable {

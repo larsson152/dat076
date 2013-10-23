@@ -15,6 +15,7 @@ import javax.inject.Named;
 /**
  *
  * @author Patrik Larsson
+ * Takes care of the request that has to do with BlogBoxUser
  */
 @Named
 @RequestScoped

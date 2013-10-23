@@ -12,6 +12,7 @@ import javax.persistence.PersistenceContext;
 /**
  *
  * @author larsson152
+ * is a EntityManager for Blog
  */
 @Stateless
 public class BlogFacade extends AbstractFacade<Blog> {

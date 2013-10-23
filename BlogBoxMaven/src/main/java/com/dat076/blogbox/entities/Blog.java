@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
 /**
  *
  * @author Patrik Larsson
+ * The blog that a user can create
  */
 @Entity
 public class Blog implements Serializable {

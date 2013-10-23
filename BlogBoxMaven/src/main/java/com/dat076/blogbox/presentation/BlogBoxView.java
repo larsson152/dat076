@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 /**
  *
  * @author Patrik Larsson
+ * Takes care of the session that has to do with BlogBoxUser
  */
 @Named
 @SessionScoped

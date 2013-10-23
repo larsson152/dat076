@@ -17,6 +17,7 @@ import javax.inject.Named;
 /**
  *
  * @author larsson152
+ * Takes care of the session that has to do with Blog
  */
 @Named
 @SessionScoped

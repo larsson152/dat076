@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 /**
  *
  * @author Patrik Larsson
+ * The user of our blog platform
  */
 @Entity
 public class BlogBoxUser implements Serializable {
