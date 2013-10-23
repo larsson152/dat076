@@ -45,7 +45,7 @@
                 <div id="wrapper2">
                     <div id="newsletter" class="container">
 
-                        <c:if test="#{!blogBoxView.hasUser}">
+                        <c:if test="#{!blogBoxView.hasUser()}">
                             <div id="wrapper2">
                                 <div id="newsletter" class="container">
                                     <div class="title">
@@ -68,7 +68,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="12u">
-                                                    <h:commandButton class ="button submit" action="#{blogBoxCreate.createUser}" value="Register new user"/>
+                                                    <h:commandButton class ="button submit" action="#{blogBoxCreate.createUser()}" value="Register new user"/>
                                                     <h:commandButton class ="button submit" action="#{blogBoxView.loginUser(blogBoxCreate.user)}" value="Login"/>
                                                     <h:commandButton class ="button submit" action="viewBlogs" value="BlogList"/>
                                                 </div>
@@ -79,7 +79,7 @@
                             </div>
                         </c:if>
 
-                        <c:if test="#{blogBoxView.hasUser}">
+                        <c:if test="#{blogBoxView.hasUser()}">
                             <div id="wrapper2">
                                 <div id="newsletter" class="container">
                                     <h:form>
@@ -100,7 +100,7 @@
                             <h2>Latest blogs</h2>
                         </div>
 
-                        <c:forEach var="user" items="#{blogBoxView.getUsers}">
+                        <c:forEach var="user" items="#{blogBoxView.getUsers()}">
                             <c:forEach var="blog" items="#{blogBoxUserView.getBlogsOnUser(user)}">
                                 <h:form>
                                     <div class="content">

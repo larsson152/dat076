@@ -27,7 +27,7 @@
     </head>
     <h:body>
 
-        <c:if test="#{!blogBoxView.hasUser}">
+        <c:if test="#{!blogBoxView.hasUser()}">
             <h:form>
                 <div class="content">
                     <div class="row">
@@ -39,7 +39,7 @@
             </h:form>
         </c:if> 
 
-        <c:if test="#{blogBoxView.hasUser}">
+        <c:if test="#{blogBoxView.hasUser()}">
 
             <div id="header-wrapper">
                 <div id="header" class="container">
@@ -64,7 +64,7 @@
                                     <div class="row">
                                         <div class="12u">
                                             <h:commandButton class ="button submit" action="index" value="index"/>
-                                            <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser}" value="Logout"/>
+                                            <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser()}" value="Logout"/>
                                         </div>
                                     </div>
                                 </div>
