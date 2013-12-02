@@ -84,16 +84,16 @@ public class BlogBoxUserView implements Serializable {
         for (Blog temp : blogs) {
             if (temp.getName().equals(blog.getName())) {                     
                 blog = temp;
-                return "blog?faces-redirect=true&includeViewParams=true";
+                return "enterBlog";
             }
         }        
-        return "user?faces-redirect=true&includeViewParams=true";
+        return "returnToUser";
     }
     //enters a blog with view only rights
      public String enterBlog(Blog tempBlog,BlogBoxUser user) {
 
         this.blog = tempBlog;
         blog.setUser(user);
-        return "viewBlogPosts?faces-redirect=true&includeViewParams=true";
+        return "showBlogPosts";
     }
 }

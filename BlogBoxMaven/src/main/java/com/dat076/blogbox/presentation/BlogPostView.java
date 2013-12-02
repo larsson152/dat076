@@ -15,15 +15,14 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-
 /**
  *
- * @author Patrik Larsson
- * Takes care of the session that has to do with BlogPost
+ * @author Patrik Larsson Takes care of the session that has to do with BlogPost
  */
 @Named
 @SessionScoped
-public class BlogPostView implements Serializable{
+public class BlogPostView implements Serializable {
+
     @EJB
     private BlogPostFacade blogPostFacade;
     private BlogPost blogPost;
@@ -35,23 +34,27 @@ public class BlogPostView implements Serializable{
         this.blogPost = new BlogPost();
     }
     //returns the blogPost
-    public BlogPost getBlogPost(){
+
+    public BlogPost getBlogPost() {
         return blogPost;
     }
     //gives BlogPostView a new blogPost
+
     public void setBlogPost(BlogPost blogPost) {
         this.blogPost = blogPost;
     }
-    
+
     //returns all blogPost in dataBase
-    public List getAllBlogPosts(){
+    public List getAllBlogPosts() {
         return blogPostFacade.findAll();
     }
     //retuns how many blogPost in database
-    public int getNumberOfBlogPost(){
+
+    public int getNumberOfBlogPost() {
         return blogPostFacade.findAll().size();
     }
     //retuns all blogPost on a blog
+
     public List<BlogPost> getBlogPostsOnBlog(Blog blog) {
         blogPost.setBlog(blog);
         List<BlogPost> blogPosts = new ArrayList<BlogPost>();
@@ -61,30 +64,27 @@ public class BlogPostView implements Serializable{
                 blogPosts.add(temp);
                 System.out.println("Blogs " + temp.getTitle());
             }
-            
+
         }
         return blogPosts;
     }
     //returns how many blogPosts a blog has
-    public int getNumberOfPostOnBlog(){
-        List<BlogPost>blogs = blogPostFacade.findAll();
-        int k=0;
-      for(BlogPost temp: blogs){
-          if(temp.getBlog().getId().equals(blogPost.getBlog().getId())){
-              k++;
-              System.out.println("Mes "+temp.getMessage());
-          }
-              
-      }
-        return k ;
-    }
-    //creats a new BlogPost on blog
-    public String createBlogPost(Blog blog){
-        blogPost.setBlog(blog);
-        Calendar cal = Calendar.getInstance();
-        blogPost.setPostDate(cal.getTime());
-        blogPostFacade.create(blogPost);
 
-        return "blog?faces-redirect=true&includeViewParams=true";
+    public int getNumberOfPostOnBlog() {
+        List<BlogPost> blogs = blogPostFacade.findAll();
+        int k = 0;
+        for (BlogPost temp : blogs) {
+            if (temp.getBlog().getId().equals(blogPost.getBlog().getId())) {
+                k++;
+                System.out.println("Mes " + temp.getMessage());
+            }
+
+        }
+        return k;
+    }
+
+    public String goToEditBlogPost(BlogPost blogpost) {
+        setBlogPost(blogpost);
+        return "deleteblogpost";
     }
 }

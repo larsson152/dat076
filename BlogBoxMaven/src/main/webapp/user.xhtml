@@ -32,7 +32,7 @@
                 <div class="content">
                     <div class="row">
                         <div class="12u">
-                            <h:commandButton class ="button submit" action="index" value="index"/>
+                            <h:commandButton class ="button submit" action="returnToIndex" value="index"/>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                                 <div class="content">
                                     <div class="row">
                                         <div class="12u">
-                                            <h:commandButton class ="button submit" action="index" value="index"/>
+                                            <h:commandButton class ="button submit" action="returnToIndex" value="index"/>
                                             <h:commandButton class ="button submit" action="#{blogBoxView.logoutUser()}" value="Logout"/>
                                         </div>
                                     </div>
@@ -94,12 +94,12 @@
                                 <div class="title">
                                     <span class="byline">Blog name:</span>
                                 </div>
-                                <h:inputText class="text" value="#{blogBoxUserCreate.blog.name}"/>
+                                <h:inputText class="text" value="#{addBlogBB.blog.name}"/>
                                 <br/>
                                 <div class="content">
                                     <div class="row">
                                         <div class="12u">
-                                            <h:commandButton class ="button submit" action="#{blogBoxUserCreate.createBlog(blogBoxView.user)}" value="Create new blog"/>
+                                            <h:commandButton class ="button submit" action="#{addBlogBB.createBlog(blogBoxView.user)}" value="Create new blog"/>
                                         </div>
                                     </div>
                                 </div>

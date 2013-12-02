@@ -21,16 +21,23 @@
                 $("#effect").effect("slide", 500);
             });
         </script>
+
+        <script>
+            $(function() {
+                $("#accordion").accordion();
+            });
+        </script>
+
         <script src="js/clock.js"></script>
     </head>
     <body>
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="menu">  
-                        <body onload="startTime();"/>
-                        <h1><p onmouseover="showDate();" onmouseout="startTime();" href="" id="clock"></p></h1>
-                        <p>Tip: Hold mouse over clock to see the date!</p>
-                    </div>
+                    <body onload="startTime();"/>
+                    <h1><p onmouseover="showDate();" onmouseout="startTime();" href="" id="clock"></p></h1>
+                    <p>Tip: Hold mouse over clock to see the date!</p>
+                </div>
                 <div id="logo">
                     <h1><a href="">Blogbox</a></h1>
                 </div>
@@ -42,18 +49,21 @@
                     <div class="title">
                         <h2><h:outputText value="#{blogBoxUserView.blog.name}"/></h2>
                         <span class="byline">By: <h:outputText value="#{blogBoxUserView.blog.user.name}"/></span>
-                        
+
                     </div>
                     <div class="content">
                         <h:form>
-                            <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
-                                <h3><strong><h:outputText value ="#{blogPost.title}"/></strong></h3>
-                                <h3><strong><h:outputText value ="#{blogPost.postDate}"/></strong></h3>
-                                <br/>
-                                <h:outputText value ="#{blogPost.message}"/>
-                                <br/>
-                            </c:forEach>
-                            <h:commandButton class="button submit" action="viewBlogs" value="BlogList!"/>
+                            <div id="accordion">
+                                <c:forEach var="blogPost" items="#{blogPostView.getBlogPostsOnBlog(blogBoxUserView.blog)}">
+                                    <h3><strong><h:outputText value ="Title: #{blogPost.title} Date: #{blogPost.postDate}"/></strong></h3>
+                                    <div>
+                                        <p>
+                                            #{blogPost.message}
+                                        </p>
+                                    </div>                               
+                                </c:forEach>
+                            </div>
+                            <h:commandButton class="button submit" action="returnToBlogs" value="BlogList!"/>
                             <br/>
                         </h:form>
                     </div>

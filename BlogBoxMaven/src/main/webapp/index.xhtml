@@ -20,6 +20,7 @@
                 $("#effect").effect("slide", 500);
             });
         </script>
+
         <script src="js/clock.js"></script>
 
         <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -56,21 +57,21 @@
                                         <h:form>
                                             <div class="row half">
                                                 <div class="6u">
-                                                    <h:outputLabel value="Name:"/><h:inputText class="text" value="#{blogBoxCreate.user.name}"/>
+                                                    <h:outputLabel value="Name:"/><h:inputText class="text" value="#{addBlogBoxUserBB.user.name}"/>                                                   
                                                     <br/>
                                                 </div>
 
                                                 <div class="6u">
-                                                    <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{blogBoxCreate.user.password}"/>
+                                                    <h:outputLabel value="Password:"/><h:inputSecret class="text" value="#{addBlogBoxUserBB.user.password}"/>
                                                     <br/>
                                                 </div>
 
                                             </div>
                                             <div class="row">
                                                 <div class="12u">
-                                                    <h:commandButton class ="button submit" action="#{blogBoxCreate.createUser()}" value="Register new user"/>
-                                                    <h:commandButton class ="button submit" action="#{blogBoxView.loginUser(blogBoxCreate.user)}" value="Login"/>
-                                                    <h:commandButton class ="button submit" action="viewBlogs" value="BlogList"/>
+                                                    <h:commandButton class ="button submit" action="#{addBlogBoxUserBB.createUser()}" value="Register new user"/>
+                                                    <h:commandButton class ="button submit" action="#{blogBoxView.loginUser(addBlogBoxUserBB.user)}" value="Login"/>
+                                                    <h:commandButton class ="button submit" action="goToBlogs" value="BlogList"/>
                                                 </div>
                                             </div>
                                         </h:form>
